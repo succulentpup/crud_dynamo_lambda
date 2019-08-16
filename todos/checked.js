@@ -13,7 +13,7 @@ module.exports.checked = (event, context, callback) => {
     },
   };
 
-  dynamoDb.scan(params, (error, result) => {
+  dynamoDb.get(params, (error, result) => {
     if (error) {
       console.error(error);
       callback(null, {
